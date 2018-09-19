@@ -1,11 +1,10 @@
 // Write your Javascript excercises here:
 // Our variables
 const key = "8cc94279432f44f38ef448ffa067b76c"
-const urlNewsBox = `https://newsapi.org/v2/everything?q=Stockholm&konst&kultur&language=sv&sortBy=publishedAt&apiKey=${key}`
-const urlSideBar = `https://newsapi.org/v2/everything?q=Stockholm&konst&kultur&language=sv&sortBy=publishedAt&apiKey=${key}`
-const urlheadnews = `https://newsapi.org/v2/everything?q=Stockholm&konst&kultur&language=sv&sortBy=publishedAt&apiKey=${key}`
-const urlpopularSideBar = `https://newsapi.org/v2/everything?q=Stockholm&konst&kultur&language=sv&sortBy=popularity&apiKey=${key}`
-
+const urlNewsBox = `https://newsapi.org/v2/everything?q=Stockholm&art&culture&language=en&sortBy=publishedAt&apiKey=${key}`
+const urlSideBar = `https://newsapi.org/v2/everything?q=Stockholm&art&culture&language=en&sortBy=publishedAt&apiKey=${key}`
+const urlheadnews = `https://newsapi.org/v2/everything?q=Stockholm&art&culture&language=en&sortBy=publishedAt&apiKey=${key}`
+const urlpopularSideBar = `https://newsapi.org/v2/everything?q=Stockholm&art&culture&language=en&sortBy=popularity&apiKey=${key}`
 
 // Our function headnews div
 const recievedNewsheadnews = (newsdata) => {
@@ -27,19 +26,18 @@ const recievedNewsheadnews = (newsdata) => {
     })
 }
 
-
 // Our function newsBox div
 const recievedNewsNewsBox = (newsdata) => {
 
 	// For each article object from the API, we create a new div in HTML.
-    newsdata.articles.forEach((article) => {
+    newsdata.articles.forEach((article, index) => {
       const descriptionLength = 98;
       let shortDescription = article.description;
       if (article.description.length > descriptionLength) {
         shortDescription = article.description.substring (0,descriptionLength)+'...';
       }
 
-      if(article.urlToImage) {
+      if(article.urlToImage && index < 10) {
 
 				//Here we create and add html elements to our html file
 				document.querySelector(".newsBox").innerHTML +=
@@ -57,7 +55,6 @@ const recievedNewsNewsBox = (newsdata) => {
     })
 }
 
-
 // Our function latestNewsSideBar div
 const recievedNewsSideBar = (newsdata) => {
 
@@ -71,14 +68,13 @@ const recievedNewsSideBar = (newsdata) => {
           `<div class="latestNewsSideBar-news">
               <a href ="${article.url}" target="_blank">
                 <h6>${article.publishedAt}</h6>
-                <h3>${article.title}</h3>
+                <h4>${article.title}</h4>
               </a>
             </div>`
 
       }
     })
 }
-
 
 // Our function popularNewsSideBar div
 const recievedpopularNewsSideBar = (newsdata) => {
@@ -93,7 +89,7 @@ const recievedpopularNewsSideBar = (newsdata) => {
           `<div class="popularNewsSideBar-news">
               <a href ="${article.url}" target="_blank">
                 <h6>${article.publishedAt}</h6>
-                <h3>${article.title}</h3>
+                <h4>${article.title}</h4>
               </a>
             </div>`
 

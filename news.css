@@ -2,9 +2,16 @@
   box-sizing: border-box;
 }
 
+html{
+  font-family: 'Nunito Sans', sans-serif;
+}
+
 Body{
-  font-family: Times,serif;
   background-color: white;
+}
+
+h1, h2, h3, h5{
+  font-family: 'Halant', serif;
 }
 
 header{
@@ -16,7 +23,7 @@ header{
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: +2;
 }
 
 h1{
@@ -29,19 +36,31 @@ h2{
   font-weight: bold;
   padding-left: 10px;
   padding-top: 20px;
-  border-top: 1px solid grey;
+}
 
+h2:after{
+  position: absolute;
+  content: "";
+  height: 4px;
+  background-color: blue;
+  width: auto;
+  top: 50%;
 }
 
 h3{
-  font-size: 17px;
+  font-size: 16px;
+}
 
+h4{
+  font-size: 13px;
+  padding: 0px;
 }
 
 h5{
 }
 
 h6 {
+  font-size: 10px;
   text-align: left;
   font-style: italic;
   opacity: 0.4;
@@ -96,19 +115,18 @@ a:hover {
   height: auto;
   background-color: white;
   padding: 0 20px 20px 20px;
-  margin: 10px;
   position: relative;
 }
 
 .headnews-news h3{
   z-index: +1;
-  position: fixed;
-  text-align: justify;
   position: absolute;
-  margin-right: 30px;
-  padding: 20px;
   bottom: 30px;
   left: 16px;
+  width: auto;
+  margin-right: 30px;
+  padding: 10px;
+
   background-color: #ffffffc5;
   color: black;
 
@@ -123,7 +141,6 @@ a:hover {
   width: 100%;
 	background-color: white;
   padding: 0 20px 20px 20px;
-  margin: 10px;
 }
 
 
@@ -137,18 +154,20 @@ a:hover {
   top: 0;
   padding-bottom: 10px;
   border-left: 1px solid pink;
+  position: relative;
 
 }
 
 .latestNewsSideBar-news {
   width: auto;
   padding: 0 0 0 0;
-  margin: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+
 }
 
 .latestNewsSideBar-news h3{
   font-size: 14px;
-  font-family: 'Roboto', sans-serif;
 
 }
 
@@ -158,13 +177,16 @@ a:hover {
   top: 0;
   padding-bottom: 10px;
   border-left: 1px solid pink;
+  position: relative;
+
 
 }
 
 .popularNewsSideBar-news {
   width: auto;
   padding: 0 0 0 0;
-  margin: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 /* DESKTOP media="( max-width: 1280px)" */
@@ -172,4 +194,5 @@ a:hover {
   .newsBox-news{
     width: calc(50% - 20px);
   }
+
 }
