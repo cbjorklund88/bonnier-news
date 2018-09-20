@@ -1,19 +1,18 @@
 // Write your Javascript excercises here:
 // Our variables
 const key = "8cc94279432f44f38ef448ffa067b76c"
-const urlheadnews = `https://newsapi.org/v2/everything?q=new-albums&language=en&sortBy=publishedAt&apiKey=${key}`
-const urlNewsBox = `https://newsapi.org/v2/everything?q=netflix&hbo&language=en&sortBy=publishedAt&apiKey=${key}`
-const urlSideBar = `https://newsapi.org/v2/everything?q=tv-series&language=en&sortBy=publishedAt&apiKey=${key}`
-const urlpopularSideBar = `https://newsapi.org/v2/everything?q=tv-series&q=music&language=en&sortBy=popularity&apiKey=${key}`
+const urlheadnews = `https://newsapi.org/v2/everything?q=Digital-detox&language=en&sortBy=publishedAt&apiKey=${key}`
+const urlNewsBox = `https://newsapi.org/v2/everything?q=Digital-detox&language=en&sortBy=publishedAt&apiKey=${key}`
+const urllastesSideBar = `https://newsapi.org/v2/everything?q=Digital-detox&language=en&sortBy=publishedAt&apiKey=${key}`
+const urlpopularSideBar = `https://newsapi.org/v2/everything?q=Digital-detox&language=en&sortBy=popularity&apiKey=${key}`
 
 // Our function headnews div
 const recievedNewsheadnews = (newsdata) => {
 
 	// For each article object from the API, we create a new div in HTML.
-    newsdata.articles.forEach((article, index) =>{
+    newsdata.articles.forEach((article, index) => {
 
       if(article.urlToImage && index < 1) {
-
         //Here we create and add html elements to our html file
         document.querySelector(".headnews").innerHTML +=
           `<div class="headnews-news">
@@ -26,33 +25,44 @@ const recievedNewsheadnews = (newsdata) => {
     })
 }
 
+////------------FUNCTION THAT WE WANT TO INCORPORATE IN .NEWSBOX--------------
+//   function toggleDescription() {
+//     this.classList.toggle("active")
+//   }
+//   document.getElementById("readmore-button").onklick = toggleDescription
+////--------------------------------------------------------------------------
+
+
 // Our function newsBox div
 const recievedNewsNewsBox = (newsdata) => {
 
 	// For each article object from the API, we create a new div in HTML.
     newsdata.articles.forEach((article, index) => {
-      const descriptionLength = 98;
-      let shortDescription = article.description;
+      const descriptionLength = 80;
+      let previewDescription = article.description;
       if (article.description.length > descriptionLength) {
-        shortDescription = article.description.substring (0,descriptionLength)+'...';
+        previewDescription = article.description.substring (0,descriptionLength)+'...';
       }
 
       if(article.urlToImage && index < 11) {
-
 				//Here we create and add html elements to our html file
 				document.querySelector(".newsBox").innerHTML +=
           `<div class="newsBox-news">
-              <a href ="${article.url}" target="_blank">
                 <h6>${article.publishedAt}</h6>
+              <a href ="${article.url}" target="_blank">
                 <h3>${article.title}</h3>
+              </a>
                 <h5>${article.source.name}</h5>
                 <img src="${article.urlToImage}"/>
-                <p>${shortDescription}</p>
-              </a>
-            </div>`
+                <p>${previewDescription}</p>
+              <div class="readmore-button"> Read more </div>
+              <div class="descriptionLength-readmore"><p>${article.description}</p></div>
+          </div>`
       }
+
     })
 }
+
 
 // Our function latestNewsSideBar div
 const recievedNewsSideBar = (newsdata) => {
@@ -60,7 +70,7 @@ const recievedNewsSideBar = (newsdata) => {
 	// For each article object from the API, we create a new div in HTML.
     newsdata.articles.forEach((article, index) =>{
 
-      if(article.urlToImage && index < 5) {
+      if(index < 5) {
 
         //Here we create and add html elements to our html file
         document.querySelector(".latestNewsSideBar").innerHTML +=
@@ -103,7 +113,7 @@ fetch(urlNewsBox)
   .then(response => response.json())
   .then(recievedNewsNewsBox)
 
-fetch(urlSideBar)
+fetch(urllastesSideBar)
   .then(response => response.json())
   .then(recievedNewsSideBar)
 
