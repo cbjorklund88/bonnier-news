@@ -1,10 +1,10 @@
 // Write your Javascript excercises here:
 // Our variables
 const key = "8cc94279432f44f38ef448ffa067b76c"
-const urlNewsBox = `https://newsapi.org/v2/everything?q=Stockholm&art&culture&language=en&sortBy=publishedAt&apiKey=${key}`
-const urlSideBar = `https://newsapi.org/v2/everything?q=Stockholm&art&culture&language=en&sortBy=publishedAt&apiKey=${key}`
-const urlheadnews = `https://newsapi.org/v2/everything?q=Stockholm&art&culture&language=en&sortBy=publishedAt&apiKey=${key}`
-const urlpopularSideBar = `https://newsapi.org/v2/everything?q=Stockholm&art&culture&language=en&sortBy=popularity&apiKey=${key}`
+const urlheadnews = `https://newsapi.org/v2/everything?q=new-albums&language=en&sortBy=publishedAt&apiKey=${key}`
+const urlNewsBox = `https://newsapi.org/v2/everything?q=netflix&hbo&language=en&sortBy=publishedAt&apiKey=${key}`
+const urlSideBar = `https://newsapi.org/v2/everything?q=tv-series&language=en&sortBy=publishedAt&apiKey=${key}`
+const urlpopularSideBar = `https://newsapi.org/v2/everything?q=tv-series&q=music&language=en&sortBy=popularity&apiKey=${key}`
 
 // Our function headnews div
 const recievedNewsheadnews = (newsdata) => {
@@ -37,7 +37,7 @@ const recievedNewsNewsBox = (newsdata) => {
         shortDescription = article.description.substring (0,descriptionLength)+'...';
       }
 
-      if(article.urlToImage && index < 10) {
+      if(article.urlToImage && index < 11) {
 
 				//Here we create and add html elements to our html file
 				document.querySelector(".newsBox").innerHTML +=
@@ -50,7 +50,6 @@ const recievedNewsNewsBox = (newsdata) => {
                 <p>${shortDescription}</p>
               </a>
             </div>`
-
       }
     })
 }
@@ -71,7 +70,6 @@ const recievedNewsSideBar = (newsdata) => {
                 <h4>${article.title}</h4>
               </a>
             </div>`
-
       }
     })
 }
@@ -92,12 +90,9 @@ const recievedpopularNewsSideBar = (newsdata) => {
                 <h4>${article.title}</h4>
               </a>
             </div>`
-
       }
     })
 }
-
-
 
 //Fetch is a built in function in Javascript, it gets the data from the API and tranforms it into Javascript objects – JSON data.
 fetch(urlheadnews)
