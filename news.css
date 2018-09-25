@@ -214,8 +214,12 @@ a:hover {
   height: 32px;
   font-size: 12px;
   text-align: center;
+<<<<<<< HEAD
   margin-top: 16px;
   outline:none;
+=======
+  cursor: pointer;
+>>>>>>> 1211d5b65c6c7282ecb701a1c218697a8478db25
 }
 
 .readmore-button:hover {
