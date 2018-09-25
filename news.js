@@ -25,6 +25,13 @@ const recievedNewsheadnews = (newsdata) => {
     })
 }
 
+  const toggleAccordion = (accordionId, descriptionId) => {
+    const accordionElement = document.getElementById(accordionId);
+    const descriptionElement = document.getElementById(descriptionId);
+    accordionElement.classList.toggle('visible');
+    descriptionElement.classList.toggle('visible');
+  }
+
 ////------------FUNCTION THAT WE WANT TO INCORPORATE IN .NEWSBOX--------------
 //   function toggleDescription() {
 //     this.classList.toggle("active")
@@ -48,15 +55,17 @@ const recievedNewsNewsBox = (newsdata) => {
 				//Here we create and add html elements to our html file
 				document.querySelector(".newsBox").innerHTML +=
           `<div class="newsBox-news">
-                <h6>${article.publishedAt}</h6>
+              <h6>${article.publishedAt}</h6>
+              <div class="image-newsBox"><img src="${article.urlToImage}"/></div>
               <a href ="${article.url}" target="_blank">
                 <h3>${article.title}</h3>
               </a>
-                <h5>${article.source.name}</h5>
-                <img src="${article.urlToImage}"/>
-                <p>${previewDescription}</p>
-              <div class="readmore-button"> Read more </div>
-              <div class="descriptionLength-readmore"><p>${article.description}</p></div>
+              <h5>${article.source.name}</h5>
+              <span id="description${index}" class="preview-description visible">${previewDescription}</span>
+              <div id="accordion${index}" class="description-readmore">
+                <span>${article.description}</span>
+              </div>
+              <button class="readmore-button" onclick="toggleAccordion('accordion${index}', 'description${index}')">Read more</button>
           </div>`
       }
 
