@@ -53,38 +53,46 @@ h2:after{
 h3{
   font-size: 16px;
   font-weight: normal;
-
-}
-
-.latestNewsSideBar .popularNewsSideBar h3{
-  font-size: 16px;
-  margin: 0;
-  line-height: 0;
+  margin: 0 0 10px 0;
 }
 
 /*article titles side bar*/
 h4{
   font-size: 13px;
   padding: 0px;
+  margin: 0px;
 }
 
 /*source name*/
 h5{
-
+  margin: 0;
+  opacity: 0.4;
 }
 
 /*published at*/
-h6 {
+h6{
+  margin: 0 0 5px 0;
   font-size: 10px;
   text-align: left;
   font-style: italic;
   opacity: 0.4;
 }
 
+.latestNewsSideBar h6{
+  margin: 10px 0 0 0;
+}
+
+.popularNewsSideBar h6{
+  margin: 10px 0 0 0;
+}
+
+
+/*description*/
 span{
   /* text-align: justify; */
   font-size: 14px;
   line-height: 1.6;
+  margin: 0 0 10px 0;
 }
 
 a{
@@ -161,14 +169,13 @@ a:hover {
 .newsBox-news {
   width: 100%;
   background-color: white;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin: 10px 5px 10px 5px;
   padding: 5px 5px 5px 5px;
 }
 
 .newsBox-news img{
   width: 100%;
-  max-height: 370px;
+  height: 200px;
   object-fit: cover;
 }
 
@@ -278,21 +285,26 @@ a:hover {
 }
 
 
-/* DESKTOP media="*/
-@media only screen and (min-width: 980px) {
+/* DESKTOP media= (601px -> )*/
+@media only screen and (min-width: 901px) {
   .newsBox-news{
-    width: calc(33% - 20px);
+    width: calc(33.33% - 10px);
   }
 }
 
-
-/*  TABLET media="*/
-@media only screen and (min-width: 640px) {
+/* Tablet Breakpoint (601px -> 900px) */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
   .newsBox-news{
-    width: calc(50% - 20px);
+    width: calc(50% - 10px);
   }
 }
 
+/* MOBILE -- Breakpoint (0 -> 600px) */
+@media only screen and (max-width: 600px){
+  .newsBox-news{
+    width: calc(100% - 10px);
+  }
+}
 
 /* -------------TOGGLE DESCRIPTION NEWS BOX------------- */
 
