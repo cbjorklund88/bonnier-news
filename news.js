@@ -12,7 +12,7 @@ const recievedNewsheadnews = (newsdata) => {
 	// For each article object from the API, we create a new div in HTML.
     newsdata.articles.forEach((article, index) => {
 
-      if(article.urlToImage && index < 1) {
+      if(article.urlToImage && index == 0) {
         //Here we create and add html elements to our html file
         document.querySelector(".headnews").innerHTML +=
           `<div class="headnews-news">
@@ -33,6 +33,7 @@ const recievedNewsheadnews = (newsdata) => {
     button.classList.toggle('buttonExpanded')
   }
 
+
 // Our function newsBox div
 const recievedNewsNewsBox = (newsdata) => {
 
@@ -44,7 +45,7 @@ const recievedNewsNewsBox = (newsdata) => {
         previewDescription = article.description.substring (0,descriptionLength)+'...';
       }
 
-      if(article.urlToImage && index > 1 && index < 12) {
+      if(index > 0 && index < 12) {
 				//Here we create and add html elements to our html file
 				document.querySelector(".newsBox").innerHTML +=
           `<div class="newsBox-news">
