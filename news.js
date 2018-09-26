@@ -71,7 +71,7 @@ const recievedNewsNewsBox = (newsdata) => {
 
     })
 }
-
+ 
 
 // Our function latestNewsSideBar div
 const recievedNewsSideBar = (newsdata) => {
