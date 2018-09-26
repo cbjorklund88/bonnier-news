@@ -51,7 +51,7 @@ const recievedNewsNewsBox = (newsdata) => {
         previewDescription = article.description.substring (0,descriptionLength)+'...';
       }
 
-      if(article.urlToImage && index > 1 && index < 11) {
+      if(article.urlToImage && index > 1 && index < 12) {
 				//Here we create and add html elements to our html file
 				document.querySelector(".newsBox").innerHTML +=
           `<div class="newsBox-news">
@@ -79,7 +79,7 @@ const recievedNewsSideBar = (newsdata) => {
 	// For each article object from the API, we create a new div in HTML.
     newsdata.articles.forEach((article, index) =>{
 
-      if(index < 5) {
+      if(index < 8) {
 
         //Here we create and add html elements to our html file
         document.querySelector(".latestNewsSideBar").innerHTML +=
@@ -99,7 +99,7 @@ const recievedpopularNewsSideBar = (newsdata) => {
 	// For each article object from the API, we create a new div in HTML.
     newsdata.articles.forEach((article, index) =>{
 
-        if(index < 5)  {
+        if(index < 8)  {
 
         //Here we create and add html elements to our html file
         document.querySelector(".popularNewsSideBar").innerHTML +=
