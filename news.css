@@ -6,7 +6,6 @@
 
 html{
   font-family: 'Source Sans Pro', sans-serif;
-
 }
 
 Body{
@@ -15,7 +14,6 @@ Body{
 
 h1, h2, h3, h5{
   font-family: 'Playfair Display', serif;
-
 }
 
 header {
@@ -25,27 +23,17 @@ header {
   width: 100%;
   top: 0;
   left: 0;
-  z-index: +2;
   background-color: white;
   padding: 0px 80px;
 }
 
-header >.navbar-list{
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  flex: 1 1;
-  max-width: 80%;
-}
-
-.navbar-list a{
-  margin: 0 5px;
-  padding-right: 10px;
-  padding-bottom: 10px;
+.navbar-list {
+  display: none;
 }
 
 .newsPaperLogo {
   display: flex;
+  justify-content: flex-start;
 }
 
  /*newspaper title*/
@@ -124,19 +112,9 @@ a{
   text-decoration: none;
 }
 
-a:link {
+a:link, a:visited{
   color: #122C34;
 }
-
-a:visited {
-  color: #122C34;
-}
-
-/* a:hover {
-  background: yellow;
-  font-weight: 900;
-  color: #000000;
-} */
 
 .allNewsContainer{
   margin-top: 80px;
@@ -331,9 +309,42 @@ footer{
 
 /* DESKTOP media= (601px -> )*/
 @media only screen and (min-width: 901px) {
-  .newsBox-news{
-    width: calc(33.33% - 10px);
+
+  header {
+    display: flex;
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: +2;
+    background-color: white;
+    padding: 0px 80px;
   }
+
+  header >.navbar-list{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex: 1 1;
+    max-width: 80%;
+  }
+
+  .navbar-list a{
+    margin: 0 5px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+  }
+
+  .newsPaperLogo {
+    display: flex;
+  }
+
+   /*newspaper title*/
+  h1{
+    justify-content: flex-start;
+  }
+
   .allNewsContainer{
     margin-top: 80px;
     display: flex;
@@ -349,32 +360,70 @@ footer{
   .sidebarContainer{
     width: 30%;
     margin-left: 1%;
+  }
+
+  .newsBox-news{
+    width: calc(33.33% - 10px);
   }
 }
 
 /* Tablet Breakpoint (601px -> 900px) */
 @media only screen and (min-width: 601px) and (max-width: 900px) {
-  .newsBox-news{
-    width: calc(50% - 10px);
-  }
-  .allNewsContainer{
-    margin-top: 80px;
+
+  header {
     display: flex;
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: +2;
+    background-color: white;
+    padding: 0px 80px;
+  }
+
+  .newsPaperLogo {
+    display: flex;
+  }
+
+   /*newspaper title*/
+  h1{
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .navbar-list{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  .navbar-list a{
+    margin: 0 5px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+  }
+
+  .allNewsContainer{
     flex-flow: row;
     position: relative;
     margin-left: 80px;
     margin-right: 80px;
-    padding-bottom: 20px;
   }
+
   .mainNews{
     width: 70%;
   }
+
   .sidebarContainer{
     width: 30%;
     margin-left: 1%;
   }
-}
 
+  .newsBox-news{
+    width: calc(50% - 10px);
+  }
+}
 
 
 /* -------------TOGGLE DESCRIPTION NEWS BOX------------- */
