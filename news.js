@@ -25,29 +25,22 @@ const recievedNewsheadnews = (newsdata) => {
     })
 }
 
-  const toggleAccordion = (accordionId, descriptionId) => {
+  const toggleAccordion = (button, accordionId, descriptionId) => {
     const accordionElement = document.getElementById(accordionId);
     const descriptionElement = document.getElementById(descriptionId);
     accordionElement.classList.toggle('visible');
     descriptionElement.classList.toggle('visible');
+    button.classList.toggle('buttonExpanded')
   }
-
-////------------FUNCTION THAT WE WANT TO INCORPORATE IN .NEWSBOX--------------
-//   function toggleDescription() {
-//     this.classList.toggle("active")
-//   }
-//   document.getElementById("readmore-button").onklick = toggleDescription
-////--------------------------------------------------------------------------
-
 
 // Our function newsBox div
 const recievedNewsNewsBox = (newsdata) => {
 
 	// For each article object from the API, we create a new div in HTML.
     newsdata.articles.forEach((article, index) => {
-      const descriptionLength = 80;
+      const descriptionLength = 60;
       let previewDescription = article.description;
-      if (article.description.length > descriptionLength) {
+      if (article.description && article.description.length > descriptionLength) {
         previewDescription = article.description.substring (0,descriptionLength)+'...';
       }
 
@@ -63,15 +56,15 @@ const recievedNewsNewsBox = (newsdata) => {
             </a>
             <span id="description${index}" class="preview-description visible">${previewDescription}</span>
             <div id="accordion${index}" class="description-readmore">
-              <span>${article.description}</span>
+              <span>${article.description} <a href ="${article.url}" target="_blank">read full article</a></span>
             </div>
-            <button class="readmore-button" onclick="toggleAccordion('accordion${index}', 'description${index}')">Read more</button>
+            <button class="readmoreButton" onclick="toggleAccordion(this, 'accordion${index}', 'description${index}')"><i class="fas fa-angle-down"></i><i class="fas fa-angle-up"></i></button>
           </div>`
       }
 
     })
 }
- 
+
 
 // Our function latestNewsSideBar div
 const recievedNewsSideBar = (newsdata) => {

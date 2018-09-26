@@ -227,27 +227,37 @@ a:visited {
 
 .description-readmore {
   display: none;
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
 }
 
 .preview-description {
   display: none;
 }
 
-.readmore-button{
-  background-color: lightpink;
+.readmoreButton{
   border: none;
-  width: 96px;
   height: 32px;
   font-size: 12px;
   text-align: center;
   margin-top: 16px;
   outline:none;
   cursor: pointer;
+  width: 100%;
 }
 
-.readmore-button:hover {
-  transform: translate(-2px, -2px);
+.readmoreButton .fa-angle-up {
+  display: none;
+}
+
+.buttonExpanded {
+}
+
+.buttonExpanded .fa-angle-up {
+  display: block;
+}
+
+.buttonExpanded .fa-angle-down {
+  display: none;
 }
 
 /* ----------SIDE BAR---------- */
