@@ -10,49 +10,15 @@ html{
 
 Body{
   background-color: #000;
+  margin: 0;
+  padding: 0;
 }
 
-h2, h3, h5{
+/*sidebar headlines, article titles, source name*/
+h2, h3{
   font-family: 'Playfair Display', serif;
   color: #D6D5D7;
 }
-
-.articleCount {
-  color: peachpuff;
-}
-header {
-  display: flex;
-  position: fixed;
-  height: 120px;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-color: #000;
-  padding: 0px 80px;
-  border-bottom: 1px solid #D6D5D7;
-    z-index: 2;
-}
-
-.navbar-list {
-  font-size: 20px;
-  display: none;
-  color: #D6D5D7;
-  z-index: 4;
-}
-
-.newsPaperLogo {
-  display: flex;
-  justify-content: flex-start;
-  z-index: 4;
-  align-items: flex-end;
-  padding-bottom: 10px;
-}
-
- /*newspaper title*/
-/* h1{
-  justify-content: flex-start;
-  z-index: 4;
-} */
 
 /*sidebar headlines*/
 h2{
@@ -78,7 +44,6 @@ h3{
   font-weight: normal;
   margin: 0 0 10px 0;
   font-weight: 700;
-  /* font-style: italic; */
   letter-spacing: 0.5px;
 }
 
@@ -92,7 +57,8 @@ h4{
 /*source name*/
 h5{
   margin: 0;
-  opacity: 0.4;
+  opacity: 0.8;
+  color: #D6D5D7;
 }
 
 /*published at*/
@@ -101,8 +67,55 @@ h6{
   font-size: 10px;
   text-align: left;
   font-style: italic;
-  opacity: 0.4;
+  opacity: 0.8;
   color: #D6D5D7;
+}
+
+/* ---------- HEADER ---------- */
+
+header {
+  display: flex;
+  position: fixed;
+  height: 120px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  padding: 0px 80px;
+  border-bottom: 1px solid #D6D5D7;
+  z-index: 2;
+}
+
+.navbar-list {
+  font-size: 20px;
+  display: none;
+  color: #D6D5D7;
+  z-index: 4;
+}
+
+.link-item{
+  font-family: 'Playfair Display', serif;
+}
+
+.link-item a:visited{
+    color: #D6D5D7;
+}
+
+.newsPaperLogo {
+  display: flex;
+  justify-content: flex-start;
+  z-index: 4;
+  align-items: flex-end;
+  padding-bottom: 10px;
+}
+
+.mobileLogo{
+  display: block;
+}
+
+.deskLogo{
+  display: none;
 }
 
 .latestNewsSideBar h6{
@@ -112,7 +125,6 @@ h6{
 .popularNewsSideBar h6{
   margin: 10px 0 0 0;
 }
-
 
 /*description*/
 span{
@@ -127,12 +139,12 @@ a{
   text-decoration: none;
 }
 
-a:link, a:visited{
+.sidebarContainer a:link, a:visited{
     color: #D6D5D7;
 }
 
 .allNewsContainer{
-  margin-top: 80px;
+  margin-top: 140px;
   display: flex;
   flex-flow: column;
   position: relative;
@@ -142,6 +154,12 @@ a:link, a:visited{
 .mainNews{
   width: 100%;
 }
+
+/* ---------- ARTICLE COUNT---------- */
+
+.articleCount {
+  opacity: 0.6;
+  color: #D6D5D7;}
 
 /* ----------HEAD NEWS BOX---------- */
 
@@ -197,6 +215,10 @@ a:link, a:visited{
  opacity: 0.8;
 }
 
+.readFullArticle{
+  color: blue;
+}
+
 .newsBox-news img{
   width: 100%;
   height: 200px;
@@ -207,7 +229,6 @@ a:link, a:visited{
   background-image: url("newspaper.jpeg");
   background-size: 100%;
   background-repeat: no-repeat;
-
 }
 
 /* ----------TOGGLE FUNCTION OF DESCRIPTION IN NEWS BOX ---------- */
@@ -304,7 +325,6 @@ a:link, a:visited{
 
 /* ----------FOOTER---------- */
 
-
 footer{
   height: 10px;
   clear: both;
@@ -312,7 +332,7 @@ footer{
   right: 0;
   bottom: 0;
   left: 0;
-  border-top: 1px solid black;
+  border-top: 1px solid  #D6D5D7;
   position: absolute;
 }
 .footer-links{
@@ -323,6 +343,7 @@ footer{
   justify-content: space-around;
 }
 
+/* ________________________________________________________________________________ */
 
 /* DESKTOP media= (601px -> )*/
 @media only screen and (min-width: 901px) {
@@ -353,8 +374,12 @@ footer{
     padding-bottom: 10px;
   }
 
-  .newsPaperLogo {
-    /* display: flex; */
+  .mobileLogo{
+    display: none;
+  }
+
+  .deskLogo{
+    display: block;
   }
 
    /*newspaper title*/
@@ -363,13 +388,14 @@ footer{
   }
 
   .allNewsContainer{
-    margin-top: 80px;
     display: flex;
     flex-flow: row;
     position: relative;
     margin-left: 80px;
     margin-right: 80px;
     padding-bottom: 20px;
+    margin-top: 110px;
+
   }
   .mainNews{
     width: 70%;
@@ -390,7 +416,7 @@ footer{
   header {
     display: flex;
     position: fixed;
-    height: 80px;
+    height: 100px;
     width: 100%;
     top: 0;
     left: 0;
@@ -399,8 +425,12 @@ footer{
     padding: 0px 80px;
   }
 
-  .newsPaperLogo {
-    display: flex;
+  .mobileLogo{
+    display: block;
+  }
+
+  .deskLogo{
+    display: none;
   }
 
    /*newspaper title*/
@@ -426,6 +456,8 @@ footer{
     position: relative;
     margin-left: 80px;
     margin-right: 80px;
+    margin-top: 110px;
+
   }
 
   .mainNews{

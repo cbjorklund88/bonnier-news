@@ -52,7 +52,7 @@ const recievedNewsNewsBox = (newsdata) => {
         previewDescription = article.description.substring (0,descriptionLength)+'...';
       }
 
-      if(index > 0 && index < 12) {
+      if(article.description && index > 0 && index < 11) {
 				//Here we create and add html elements to our html file
 				document.querySelector(".newsBox").innerHTML +=
           `<div class="newsBox-news">
@@ -64,7 +64,7 @@ const recievedNewsNewsBox = (newsdata) => {
             </a>
             <span id="description${index}" class="preview-description visible">${previewDescription}</span>
             <div id="accordion${index}" class="description-readmore">
-              <span>${article.description} <a href ="${article.url}" target="_blank">read full article</a></span>
+              <span> ${article.description} <a href ="${article.url} class="readFullArticle" target="_blank">READ FULL ARTICLE</a></span>
             </div>
             <button class="readmoreButton" onclick="toggleAccordion(this, 'accordion${index}', 'description${index}')"><i class="fas fa-angle-down"></i><i class="fas fa-angle-up"></i></button>
           </div>`
@@ -73,8 +73,9 @@ const recievedNewsNewsBox = (newsdata) => {
       }
 
     })
-    
-    document.querySelector(".articleCount").innerHTML += numberOfArticles
+
+    document.querySelector(".articleCount").innerHTML +=
+      `All articles (${numberOfArticles})`
 
 }
 
@@ -115,7 +116,7 @@ const recievedpopularNewsSideBar = (newsdata) => {
                 <h4>${article.title}</h4>
               </a>
             </div>`
-      }
+        }
     })
 }
 
