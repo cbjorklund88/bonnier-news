@@ -9,6 +9,7 @@ const urlpopularSideBar = `https://newsapi.org/v2/everything?q=Digital-detox&lan
 // Our function headnews div
 const recievedNewsheadnews = (newsdata) => {
 
+
 	// For each article object from the API, we create a new div in HTML.
     newsdata.articles.forEach((article, index) => {
 
@@ -21,8 +22,12 @@ const recievedNewsheadnews = (newsdata) => {
                 <img src="${article.urlToImage}"/>
               </a>
             </div>`
+
+
+
       }
     })
+
 }
 
   const toggleAccordion = (button, accordionId, descriptionId) => {
@@ -36,6 +41,8 @@ const recievedNewsheadnews = (newsdata) => {
 
 // Our function newsBox div
 const recievedNewsNewsBox = (newsdata) => {
+
+  let numberOfArticles = 0
 
 	// For each article object from the API, we create a new div in HTML.
     newsdata.articles.forEach((article, index) => {
@@ -51,7 +58,7 @@ const recievedNewsNewsBox = (newsdata) => {
           `<div class="newsBox-news">
             <h5>${article.source.name}</h5>
             <h6>${article.publishedAt}</h6>
-            <div class="image-newsBox"><img src="${article.urlToImage}"/></div>
+            <img src="${article.urlToImage}" class="image-newsBox" />
             <a href ="${article.url}" target="_blank">
               <h3>${article.title}</h3>
             </a>
@@ -61,9 +68,14 @@ const recievedNewsNewsBox = (newsdata) => {
             </div>
             <button class="readmoreButton" onclick="toggleAccordion(this, 'accordion${index}', 'description${index}')"><i class="fas fa-angle-down"></i><i class="fas fa-angle-up"></i></button>
           </div>`
+
+          numberOfArticles = index
       }
 
     })
+    
+    document.querySelector(".articleCount").innerHTML += numberOfArticles
+
 }
 
 
