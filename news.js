@@ -1,10 +1,10 @@
 // Write your Javascript excercises here:
 // Our variables
 const key = "8cc94279432f44f38ef448ffa067b76c"
-const urlheadnews = `https://newsapi.org/v2/everything?q=Digital-detox&language=en&sortBy=publishedAt&apiKey=${key}`
-const urlNewsBox = `https://newsapi.org/v2/everything?q=Digital-detox&language=en&sortBy=publishedAt&apiKey=${key}`
-const urllastesSideBar = `https://newsapi.org/v2/everything?q=Digital-detox&language=en&sortBy=publishedAt&apiKey=${key}`
-const urlpopularSideBar = `https://newsapi.org/v2/everything?q=Digital-detox&language=en&sortBy=popularity&apiKey=${key}`
+const urlheadnews = `https://newsapi.org/v2/top-headlines?q=space&q=universe&language=en&sortBy=publishedAt&apiKey=${key}`
+const urlNewsBox = `https://newsapi.org/v2/top-headlines?q=space&q=universe&language=en&sortBy=publishedAt&apiKey=${key}`
+const urllastesSideBar = `https://newsapi.org/v2/top-headlines?q=space&q=universe&language=en&sortBy=publishedAt&apiKey=${key}`
+const urlpopularSideBar = `https://newsapi.org/v2/top-headlines?q=space&q=universe&language=en&sortBy=popularity&apiKey=${key}`
 
 // Our function headnews div
 const recievedNewsheadnews = (newsdata) => {
@@ -22,9 +22,6 @@ const recievedNewsheadnews = (newsdata) => {
                 <img src="${article.urlToImage}"/>
               </a>
             </div>`
-
-
-
       }
     })
 
