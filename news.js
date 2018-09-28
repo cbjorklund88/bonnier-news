@@ -48,7 +48,7 @@ const recievedNewsNewsBox = (newsdata) => {
         previewDescription = article.description.substring (0,descriptionLength)+'...';
       }
 
-      if(article.description && index > 0 && index < 11) {
+      if(article.description && index > 0 && index < 10) {
 				//Here we create and add html elements to our html file
 				document.querySelector(".newsBox").innerHTML +=
           `<div class="newsBox-news">
