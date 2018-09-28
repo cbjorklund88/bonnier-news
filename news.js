@@ -1,10 +1,10 @@
 // Write your Javascript excercises here:
 // Our variables
 const key = "8cc94279432f44f38ef448ffa067b76c"
-const urlheadnews = `https://newsapi.org/v2/top-headlines?q=space&q=universe&language=en&sortBy=publishedAt&apiKey=${key}`
-const urlNewsBox = `https://newsapi.org/v2/top-headlines?q=space&q=universe&language=en&sortBy=publishedAt&apiKey=${key}`
-const urllastesSideBar = `https://newsapi.org/v2/top-headlines?q=space&q=universe&language=en&sortBy=publishedAt&apiKey=${key}`
-const urlpopularSideBar = `https://newsapi.org/v2/top-headlines?q=space&q=universe&language=en&sortBy=popularity&apiKey=${key}`
+const urlheadnews = `https://newsapi.org/v2/top-headlines?country=us&uk&au&category=science&technology&sortBy=publishedAt&apiKey=${key}`
+const urlNewsBox = `https://newsapi.org/v2/top-headlines?country=us&uk&au&category=science&technology&sortBy=publishedAt&apiKey=${key}`
+const urllastesSideBar = `https://newsapi.org/v2/top-headlines?country=us&uk&au&category=science&technology&sortBy=publishedAt&apiKey=${key}`
+const urlpopularSideBar = `https://newsapi.org/v2/top-headlines?country=us&uk&au&category=science&technology&sortBy=popularity&apiKey=${key}`
 
 // Our function headnews div
 const recievedNewsheadnews = (newsdata) => {
@@ -24,7 +24,6 @@ const recievedNewsheadnews = (newsdata) => {
             </div>`
       }
     })
-
 }
 
   const toggleAccordion = (button, accordionId, descriptionId) => {
@@ -56,12 +55,10 @@ const recievedNewsNewsBox = (newsdata) => {
             <h5>${article.source.name}</h5>
             <h6>${article.publishedAt}</h6>
             <img src="${article.urlToImage}" class="image-newsBox" />
-            <a href ="${article.url}" target="_blank">
               <h3>${article.title}</h3>
-            </a>
             <span id="description${index}" class="preview-description visible">${previewDescription}</span>
             <div id="accordion${index}" class="description-readmore">
-              <span> ${article.description} <a href ="${article.url} class="readFullArticle" target="_blank">READ FULL ARTICLE</a></span>
+              <span> ${article.description}<a href ="${article.url}target="_blank"><div class="readFullArticle">READ FULL ARTICLE</div></a></span>
             </div>
             <button class="readmoreButton" onclick="toggleAccordion(this, 'accordion${index}', 'description${index}')"><i class="fas fa-angle-down"></i><i class="fas fa-angle-up"></i></button>
           </div>`

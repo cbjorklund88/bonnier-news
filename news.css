@@ -9,7 +9,7 @@ html{
 }
 
 Body{
-  background-color: #000;
+  background-color: #0D0D16;
   margin: 0;
   padding: 0;
 }
@@ -27,15 +27,6 @@ h2{
   font-weight: 700;
   padding-left: 10px;
   padding-top: 20px;
-}
-
-h2:after{
-  position: absolute;
-  content: "";
-  height: 4px;
-  background-color: darkblue;
-  width: auto;
-  top: 50%;
 }
 
 /*article titles*/
@@ -140,6 +131,7 @@ span{
 
 a{
   text-decoration: none;
+  color: #D6D5D7;
 }
 
 .sidebarContainer a:link, a:visited{
@@ -212,17 +204,22 @@ a{
 
 .newsBox-news {
   width: calc(100% - 10px);
-  background-color: #000;
+  background-color: #0D0D16;
   margin: 10px 5px 10px 5px;
   padding: 5px 5px 5px 5px;
+  opacity: 0.8;
 }
 
 .newsBox-news:hover{
- opacity: 0.8;
+ opacity: 1;
+ color: #e6e5e8;
 }
 
-.readFullArticle a:link{
-
+.readFullArticle {
+  text-align: center;
+  margin-top: 20px;
+  background-color: #242f54;
+  padding: 5px;
 }
 
 .newsBox-news img{
