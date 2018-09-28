@@ -63,7 +63,7 @@ const recievedNewsNewsBox = (newsdata) => {
             <button class="readmoreButton" onclick="toggleAccordion(this, 'accordion${index}', 'description${index}')"><i class="fas fa-angle-down"></i><i class="fas fa-angle-up"></i></button>
           </div>`
 
-          numberOfArticles = index
+          numberOfArticles = index +1
       }
 
     })
