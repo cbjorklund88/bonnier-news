@@ -8,7 +8,7 @@ html{
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-Body{
+body{
   background-color: #0D0D16;
   margin: 0;
   padding: 0;
@@ -112,12 +112,8 @@ header {
   display: none;
 }
 
-.latestNewsSideBar h6{
-  margin: 10px 0 0 0;
-}
-
-.popularNewsSideBar h6{
-  margin: 10px 0 0 0;
+.sidebarContainer h6{
+  margin-top: 10px;
 }
 
 /*description*/
@@ -229,7 +225,7 @@ a{
 }
 
 .image-newsBox {
-  background-image: url("newspaper.jpeg");
+  background-image: url("placeholder.jpeg");
   background-size: 100%;
   background-repeat: no-repeat;
 }
@@ -294,7 +290,7 @@ a{
 
 .latestNewsSideBar-news {
   width: auto;
-  padding: 0 0 0 0;
+  padding: 0;
   margin: 0px 15px;
 }
 
@@ -321,7 +317,7 @@ a{
 
 .popularNewsSideBar-news {
   width: auto;
-  padding: 0 0 0 0;
+  padding: 0;
   margin-left: 10px;
   margin-right: 10px;
 }
@@ -363,7 +359,7 @@ footer{
     width: 100%;
     top: 0;
     left: 0;
-    z-index: +2;
+    z-index: 2;
     background-color: #000;
     padding: 0px 80px;
   }
@@ -432,7 +428,7 @@ footer{
     left: 0;
     z-index: +2;
     background-color: #000;
-    padding: 0px 80px;
+    padding: 0px 20px;
   }
 
   .mobileLogo{
@@ -458,8 +454,8 @@ footer{
   .allNewsContainer{
     flex-flow: row;
     position: relative;
-    margin-left: 80px;
-    margin-right: 80px;
+    margin-left: 0px;
+    margin-right: 0px;
     margin-top: 110px;
   }
 
