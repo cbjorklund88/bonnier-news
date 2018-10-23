@@ -152,6 +152,7 @@ a{
   opacity: 0.6;
   color: #D6D5D7;
   padding: 10px 0px;
+  margin-left: 10px;
 }
 
 
@@ -225,7 +226,7 @@ a{
 }
 
 .image-newsBox {
-  background-image: url("placeholder.jpeg");
+  background-image: url("placeholder.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
 }
